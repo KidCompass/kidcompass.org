@@ -35,37 +35,35 @@
       z-index: 10;
     }
 
-   .nav {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.75rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: 0.04em;
-      color: #111827;
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
-    .logo span {
-      color: #2563eb;
+    .logo img {
+      height: 140px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
-  position: absolute;
-  right: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  gap: 1.25rem;
-  font-size: 0.95rem;
-}
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
 
+    .nav-links a {
+      color: #4b5563;
+    }
 
     .nav-links a:hover {
       color: #111827;
@@ -312,13 +310,20 @@
       .nav {
         flex-direction: column;
         gap: 0.5rem;
-        align-items: flex-start;
+      }
+
+      .logo img {
+        height: 110px;
       }
 
       .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        position: static;
+        transform: none;
+        margin-top: 0.25rem;
+      }
+
+      .container {
+        padding: 2rem 1.25rem 3rem;
       }
 
       .hero h1 {
@@ -340,8 +345,8 @@
   <header>
     <nav class="nav">
       <div class="logo">
-  <img src="Logo.png" alt="Kid Compass logo" style="height: 40px;">
-</div>
+        <img src="Logo.png" alt="Kid Compass logo">
+      </div>
       <div class="nav-links">
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
@@ -393,14 +398,14 @@
       <h2>Frequently asked questions</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3>Can both parents see the same calendar</h3>
+          <h3>Can both parents see the same calendar?</h3>
           <p>
             Yes. On the co parent plan all linked adults see the same calendar and updates in real time.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Do I need the co parent plan if I am the only user</h3>
+          <h3>Do I need the co parent plan if I am the only user?</h3>
           <p>
             No. The one dollar plan is enough if you are the only person who needs access to the account.
             You can upgrade later if you invite others.
@@ -408,7 +413,7 @@
         </div>
 
         <div class="faq-item">
-          <h3>How do I cancel</h3>
+          <h3>How do I cancel?</h3>
           <p>
             You can cancel from your account settings at any time. Your plan will stay active until the
             end of the current billing period.
@@ -416,7 +421,7 @@
         </div>
 
         <div class="faq-item">
-          <h3>Is my data private</h3>
+          <h3>Is my data private?</h3>
           <p>
             Yes. Your data is encrypted in transit and at rest. It is used only to run Kid Compass and is
             never sold to advertisers.
@@ -437,14 +442,15 @@
             Most messages receive a reply within one business day.
           </p>
           <p class="small-text">
-            When you submit this form, your email app opens with a draft message to our support team so you can keep a copy.
+            Your message is sent securely and stored only so we can respond to your request.
           </p>
         </div>
 
-        <form action="https://formspree.io/f/xjknpopb" method="post">
+        <form action="https://formspree.io/f/xjknpopb" method="POST">
+          <input type="hidden" name="_subject" value="Kid Compass support message">
           <div class="field-group">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Jane Doe">
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required>
           </div>
 
           <div class="field-group">
@@ -453,7 +459,7 @@
           </div>
 
           <div class="field-group">
-            <label for="topic">What is this about</label>
+            <label for="topic">What is this about?</label>
             <select id="topic" name="topic" required>
               <option value="App feedback">App feedback</option>
               <option value="Bug report">Bug report</option>
@@ -465,12 +471,12 @@
 
           <div class="field-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us what you need help with"></textarea>
+            <textarea id="message" name="message" placeholder="Tell us what you need help with" required></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary">Send message</button>
           <p class="small-text">
-            If nothing happens when you click send, check that your device has a default email app set.
+            After you submit, you will see a confirmation from our form service and we will reply by email.
           </p>
         </form>
       </div>
@@ -487,6 +493,3 @@
   </script>
 </body>
 </html>
-
-
-
